@@ -30,7 +30,7 @@ function groupComments(news){
 
 function commentsToJSON(groups){
     const jsonString = JSON.stringify(groups)
-    console.log(jsonString)
+    //console.log(jsonString)
     const fileName = 'ycombinator.json'
     fs.writeFile(fileName, jsonString, err => {
         if (err) {
@@ -38,7 +38,6 @@ function commentsToJSON(groups){
         } else {
             console.log('Successfully wrote file')
         }
-    
     })
 }
 
@@ -47,6 +46,7 @@ async function scrape_ycom(){
     // console.log(response.data)
     
     const $ = cheerio.load(response.data)
+    
     const articles = []
     $('.athing').each((i, elem) => {
         articles[i] = {
@@ -65,7 +65,5 @@ async function scrape_ycom(){
     commentsToJSON(groupedArticles)
 
 }
-
-
 
 scrape_ycom()
