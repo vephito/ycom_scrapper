@@ -12,5 +12,10 @@
   "dependencies": {
     "axios": "^1.6.7",
     "cheerio": "^1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "tsc": "^2.0.4",
+    "typescript": "^5.4.2"
   }
 }
